@@ -1,4 +1,5 @@
 $(function () {
+    var url = 'http://localhost:1337/liyangzhou.tunnel.qydev.com/';
     var actorInfo = {};
     var params = parseURL(window.location.href);
     var totalLength = 0;
@@ -37,15 +38,11 @@ $(function () {
     function getActorInfo() {
         $.ajax({
             type: 'GET',
-            url: './assets/data/actor-info.json',
-            data: {id: actorId},
+            url: url + '/actor/' + actorId,
             dataType: 'json',
             success: function (result) {
-                var data = result.data;
-                console.log('params', params)
-                var index = params['id'] || 0;
-                console.log('data', data.data);
-                actorInfo = data && data.data && data.data.length ? data.data[index] : {};
+                actorInfo = result || {};
+                console.log('info', actorInfo);
                 setActonInfo();
             }
         });
@@ -55,11 +52,11 @@ $(function () {
     function setActonInfo() {
         var liItem = '<li class="long"><strong>英文名：</strong>' + actorInfo.enName + '</li>\n' +
             '                    <li><strong>作品数量：</strong>' + actorInfo.worksNumber + ' 部</li>\n' +
-            '                    <li class="long"><strong>生日：</strong>' + actorInfo.birthday + '</li>\n' +
+            '                    <li class="long"><strong>生日：</strong>' + actorInfo.birthDate + '</li>\n' +
             '                    <li><strong>出道：</strong>' + actorInfo.beActorDate + '</li>\n' +
             '                    <li class="long"><strong>星座：</strong>' + actorInfo.constellation + '</li>\n' +
             '                    <li><strong>肤色：</strong>' + actorInfo.skinColor + '</li>\n' +
-            '                    <li class="long"><strong>国籍：</strong>' + actorInfo.nationality + '</li>\n' +
+            '                    <li class="long"><strong>国籍：</strong>' + actorInfo.country + '</li>\n' +
             '                    <li><strong>特点：</strong>' + actorInfo.characteristic + '</li>';
         $('.infosay .actor-name').text(actorInfo.name);
         $('.infosay .description').text(actorInfo.description);
@@ -68,23 +65,21 @@ $(function () {
 
     // 作品列表
     function getWorks() {
-        var page = (currentPage%2 == 0) ? 2 : 1;
         pageOpt.offset = (currentPage - 1) * pageOpt.limit;
         $.ajax({
             type: 'GET',
-            url: './assets/data/works-list-'+ page +'.json',
+            url: url + '/actor/work/' + actorId,
             data: {offset: pageOpt.offset, limit: pageOpt.limit},
             dataType: 'json',
             success: function (result) {
-                var data = result.data;
-                worksList = data.items;
-                totalLength = data.totalLength;
+                worksList = result && result.list ? result.list : [];
+                totalLength = result.totalLength || 0;
                 setPagination();
                 var liElem = '';
                 worksList.forEach(function (item) {
                     if (item) {
                         liElem += '<li class="wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">\n' +
-                            '                    <a class="thumb-img" target="_blank"><img alt="花木兰" src="' + item.profile + '"\n' +
+                            '                    <a class="thumb-img" target="_blank"><img alt="花木兰" src="' + item.albumUrls[0] + '"\n' +
                             '                                                                       original="http://img5.imgtn.bdimg.com/it/u=3066208800,2478771135&fm=27&gp=0.jpg"></a>\n' +
                             '                    <div class="article">\n' +
                             '                        <h3><a>' + item.title + '</a></h3>\n' +
@@ -121,18 +116,17 @@ $(function () {
     function getRecommendStar() {
         $.ajax({
             type: 'GET',
-            url: './assets/data/recommend-star.json',
-            data: {id: actorId},
+            url: url + '/actor/recommendation',
+            data: {userId: 1},
             dataType: 'json',
             success: function (result) {
-                var data = result.data;
-                recommendStar = data.items;
+                recommendStar = result && result.list ? result.list : [];
                 var liElem = '';
                 recommendStar.forEach(function (item) {
                     if (item) {
                         liElem += '<li>\n' +
                             '                    <div class="hotimg"><a href="./work.html?id=' + item.id + '" target="_blank"><img\n' +
-                            '                            src="' + item.profile + '" alt="刘亦菲"></a></div>\n' +
+                            '                            src="' + item.albumUrls[0] + '" alt="' + item.name + '"></a></div>\n' +
                             '                    <p><a href="./work.html?id=' + item.id + '" target="_blank">' + item.name + '</a></p>\n' +
                             '                </li>';
                     }

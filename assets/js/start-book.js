@@ -1,10 +1,10 @@
 
 
 $(function () {
-    var url = 'http://localhost:8080/';
+    var url = 'http://localhost:1337/liyangzhou.tunnel.qydev.com/';
 
     var href = window.location.href;
-    var params = parseURL(href) || {
+    var params = parseURL(href).offset ? parseURL(href) : {
         currentPage: 1,
         offset: 0,
         limit: 30,
@@ -123,13 +123,11 @@ $(function () {
 
     // 获取明星列表
     function getStars() {
-        var page = (params.currentPage%2 == 0) ? 2 : 1;
         params.offset = (params.currentPage - 1) * params.limit;
         $.ajax({
             type: 'GET',
             url: url + 'actor/search',
-            // url: './assets/data/star-list-' + page + '.json',
-            data: {offset: params.offset, limit: params.limit},
+            data: filterOpt,
             dataType: 'json',
             success: function (result) {
                 var data = result;
