@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>明星录</title>
+    <meta name="description" content="明星录">
+    <link rel="shortcut icon" href="http://www.baidu.com/favicon.ico" type="image/x-icon">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="mobile-agent" content="format=html5;url=http://www.baidu.com/">
+    <meta name="mobile-agent" content="format=xhtml;url=http://www.baidu.com/">
+    <link rel="alternate" type="application/vnd.wap.xhtml+xml" media="handheld" href="http://www.baidu.com/">
+    <script src="assets/script/push.js"></script>
+    <script src="assets/script/uaredirect.js" type="text/javascript"></script>
+    <script type="text/javascript">uaredirect("http://www.baidu.com/");</script>
+    <link rel="stylesheet" type="text/css" href="assets/styles/animate.css">
+    <link rel="stylesheet" href="assets/styles/simplePagination.css">
+    <link rel="stylesheet" href="assets/iconfont/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/star-book.css">
+    <script src="assets/script/share.js"></script>
+</head>
+<body>
+<script type="text/javascript" src="assets/js/cnbazigg.js"></script>
+<div class="header" id="float">
+    <div class="wrap nav-main clearfix">
+        <div class="logo fl"><a href="./star-book.html" target="_blank"><img src="assets/images/logo2.png" alt="明星录"></a>
+        </div>
+    </div>
+
+</div>
+<div class="jumbotron">
+    <div class="rainbow">
+        <div class="red"></div>
+        <div class="orange"></div>
+        <div class="yellow"></div>
+        <div class="green"></div>
+        <div class="cyan"></div>
+        <div class="blue"></div>
+        <div class="purple"></div>
+    </div>
+    <div class="shadow"></div>
+    <img class="img" src="assets/images/hezhao.jpg" alt="明星排行">
+    <!--分享-->
+    <div class="container wrap">
+        <div class="shares-info-ny pos-a clearfix">
+            <div class="fl">分享：</div>
+            <div class="bdsharebuttonbox fl bdshare-button-style1-24" data-bd-bind="1531493373529"><a
+                    href="http://www.baidu.com/nvyou/#" class="bds_more" data-cmd="more"></a></div>
+            <script>window._bd_share_config = {
+                "common": {
+                    "bdSnsKey": {},
+                    "bdText": "",
+                    "bdMini": "2",
+                    "bdMiniList": false,
+                    "bdPic": "",
+                    "bdStyle": "1",
+                    "bdSize": "24"
+                }, "share": {}
+            };
+            with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+        </div>
+    </div>
+</div>
+
+<div class="wrap class-name pos-r clearfix">
+    <div class="search-area">
+        <strong class="h2">明星排行</strong>
+        <!--搜索-->
+        <div class="search fr clearfix pos-r">
+            <div class="input-group">
+                <input type="text" class="search-text pos-a" name="keyboard" placeholder="搜索明星" autocomplete="false">
+                <button class="image-search">
+                    <i class="iconfont icon-xiangji"></i>
+                    <input id="fileUpload" type="file" name="files[]" multiple>
+                </button>
+            </div>
+            <button class="search-btn">搜索</button>
+        </div>
+    </div>
+    <div class="crumbs pos-a">
+        <strong>当前位置：</strong><a href="http://www.baidu.com/" target="_blank">明星录</a> &gt; <a
+            href="http://www.baidu.com/nvyou/" target="_blank">明星排行</a>
+    </div>
+</div>
+
+<!--高级搜索-->
+<div class="wrap">
+    <div class="advanced-search">
+        <h1 class="advanced-title">按条件筛选：</h1>
+        <ul class="search-content"></ul>
+    </div>
+</div>
+
+<div class="wrap tpdj">
+    <script type="text/javascript">tpdj();</script>
+</div>
+
+<div class="wrap nylist loadimg" id="worksGroup">
+    <ul class="clearfix star-list" id="starList"></ul>
+    <div class="star-pagination"></div>
+</div>
+
+<div class="footer">
+    <div class="wrap wow fadeInUpBig">
+        <p class="text-center">任何公司及个人不得以任何方式复制，违者将依法追究责任，特此声明。</p>
+        <p class="tips">京公网安备:110108902134 <a class="contact-us">联系我们</a><a class="suggest">意见和留言</a></p>
+    </div>
+</div>
+
+<script type="text/javascript" src="assets/script/jquery.min.js"></script>
+<script type="text/javascript" src="assets/script/jquery.lazyload.js"></script>
+<script type="text/javascript" src="assets/script/wow.min.js"></script>
+<script type="text/javascript" src="assets/script/jquery.simplePagination.js"></script>
+<script type="text/javascript" src="assets/script/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="assets/script/jquery.fileupload.js"></script>
+<script type="text/javascript" src="assets/js/main.js"></script>
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+<script type="text/javascript" src="assets/js/cnbazigg2.js"></script>
+<script src="./assets/js/start-book.js"></script>
+</body>
+</html>

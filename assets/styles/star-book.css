@@ -1,0 +1,128 @@
+.nylist .star-list li{width:210px;height:300px;overflow:hidden;float:left;margin:20px 7px 0;box-shadow: 0 1px 3px rgba(34,25,25,0.4);cursor: pointer;}
+.nylist .star-list li .img-wrap{display:block;width:100%;height:100%;}
+.nylist .star-list li .img-wrap img{width:100%;height:100%;object-fit:cover;-webkit-transition: all 0.5s;-moz-transition: all 0.5s;-ms-transition: all 0.5s;-o-transition: all 0.5s;transition: all 0.5s;}
+.nylist .star-list li p.avnum{width:100%;height:36px;line-height:36px;top:0;left:0;color:#fff;background:rgba(0, 0, 0, 0.7);text-align:center;font-size:15px;}
+.nylist .star-list li p.avnum strong{color:#d9333f;}
+.nylist .star-list li .ny-info{width:100%;height:36px;text-align: center;bottom:0;left:0;color:#fff;background:rgba(0, 0, 0, 0.7);-webkit-transition: all 0.5s;-moz-transition: all 0.5s;-ms-transition: all 0.5s;-o-transition: all 0.5s;transition: all 0.5s;}
+.nylist .star-list li .ny-info h3{line-height:36px;font-size:16px;text-indent:2em;}
+.nylist .star-list li .ny-info p{line-height:24px;font-size:14px;text-indent:2em;}
+.nylist .star-list li .img-wrap:hover img{opacity:.8;}
+/*.nylist ul li a:hover .ny-info{height:84px;padding-bottom:10px;}*/
+.opacity-el{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 20;
+}
+/*搜索*/
+.class-name .search-area{
+    width: 520px;
+}
+.class-name .search{
+    margin-top:8px;
+    display: flex;
+    align-items: center;
+}
+.class-name .search button:focus{
+    outline: none;
+}
+.class-name .search .search-text{
+    color:#888;width:100%;
+    font-size: 15px;
+    height:34px;
+    text-indent:8px;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;box-sizing:border-box;
+    border: 1px solid #b6b6b6;
+    border-right: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+.class-name .search .search-text:focus{
+    border-color: #d9333f;
+}
+.class-name .search .input-group{
+    width: 280px;
+    position: relative;
+    height: 34px;
+    box-sizing: border-box;
+}
+.class-name .search .image-search{
+    background-color: transparent;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    margin-right: 5px;
+}
+.class-name .search .image-search:hover{
+    color: #d9333f;
+}
+.class-name .image-search #fileUpload{
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
+    top: 0;
+    left: 6px;
+    width: 20px;
+    height: 20px;
+}
+.class-name .search .search-btn{
+    height: 34px;
+    background-color: #d9333f;
+    color: #fff;
+    padding: 0 12px;
+    cursor: pointer;
+}
+.class-name .search .search-btn:hover{
+    opacity: 0.8;
+}
+/*高级搜索*/
+.advanced-search{
+    border: 2px solid #eee;
+    margin-top: 15px;
+    padding: 5px 15px 0;
+}
+.advanced-search .advanced-title{
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #b00;
+}
+.advanced-search .search-content{
+
+}
+.advanced-search .filter-category{
+    margin: 5px 0;
+}
+.advanced-search .item-group{
+    display: inline-block;
+}
+.advanced-search .category-label{
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    width: 3em;
+    margin-right: 5px;
+}
+.advanced-search .filter-item{
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 8px;
+    margin-right: 10px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.advanced-search .filter-item:hover{
+    color: #fff;
+    background-color: #8ac0f0;
+}
+.advanced-search .item-group .active{
+    color: #fff;
+    background-color: #8ac0f0;
+}
